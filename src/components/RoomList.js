@@ -11,27 +11,25 @@ class RoomList extends Component{
      this.roomsRef.on('child_added', snapshot => {
        const room = snapshot.val();
        room.key = snapshot.key;
-       this.setState({rooms: this.state.rooms.contact(room)});
+       this.setState({rooms: this.state.rooms.concat(room)});
      });
    }
 
-  render(){
-    const roomsList = () => (
-      <section>
-        <div>
-          <h2>Room list will go here</h2>
-        </div>
-      </section>
-    );
+   render() {
 
-    return (
-      <section>
-        <ul>
-          <li>{this.roomsList}</li>
-        </ul>
-      </section>
-    );
-  }
-}
+
+     return (
+       <section>
+         <h1> Room List </h1>
+         {this.state.rooms.map( room =>
+             <li>
+               {room.name}
+             </li>
+         )}
+
+       </section>
+     );
+   }
+   }
 
 export default RoomList

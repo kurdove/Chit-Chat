@@ -27,8 +27,11 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>Hello world</p>
+        <aside>
+          <RoomList firebase = {firebase} />
+        </aside>
       </div>
+
     );
   }
 }
