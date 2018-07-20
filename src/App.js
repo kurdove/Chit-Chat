@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './ChatLogo.svg';
 import './App.css';
 import * as firebase from 'firebase'
 import RoomList from './components/RoomList';
@@ -21,6 +21,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <div className="Logo-container">
+            <h1 className="centered">B</h1>
+            <img src={logo} className="App-logo" alt="logo" />
+          </div>
           <h1 className="App-title">Bloc Chat</h1>
         </header>
 

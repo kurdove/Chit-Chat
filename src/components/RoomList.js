@@ -11,6 +11,7 @@ class RoomList extends Component{
     this.roomsRef = this.props.firebase.database().ref('rooms');
     this.createRoom = this.createRoom.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -28,7 +29,7 @@ class RoomList extends Component{
 
    handleSubmit(e){
      e.preventDefault();
-     this.createRoom();
+     this.createRoom(this.state.newRoomName);
  }
 
   handleChange(e) {
