@@ -34,7 +34,6 @@ class RoomList extends Component{
 
   handleChange(e) {
     e.preventDefault();
-    // console.log('change')
     this.setState({newRoomName: e.target.value});
   }
 
@@ -54,7 +53,7 @@ class RoomList extends Component{
          <section className="new-room-form">
            <form onSubmit={this.handleSubmit}>
              <span>Create New Room:<br/></span>
-             <input type="text" placeholder="New Room" onChange={this.handleChange} />
+             <input type="text" placeholder="New Room" value={this.state.newRoomName} onChange={this.handleChange} ref="roomName"/>
              <input type="submit" value="CREATE"/>
            </form>
          </section>
