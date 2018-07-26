@@ -29,6 +29,14 @@
 
 .Side-bar {
   padding-left: 2rem;
+  padding-bottom: 100rem;
+  float: left;
+  width: 30%;
+  background-color: #e6e6e6;
+}
+
+.Message-container {
+  margin-left: 2rem;
 }
 
 .centered {
