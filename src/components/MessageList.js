@@ -6,6 +6,7 @@ class RoomList extends Component{
     super(props);
     this.state={
       rooms:[],
+      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
     };
     this.roomsRef = this.props.firebase.database().ref('rooms');
   }
@@ -24,7 +25,7 @@ class RoomList extends Component{
      let currentMessages=(
        this.state.rooms.map( message => {
          if (message.name===activeRoom) {
-         return <ul key = {message.key}>{message.content}</ul>
+         return <ul key = {message.key}>{message.content} {message.sentAt}</ul>
         }
         return null;
        })
