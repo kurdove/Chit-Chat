@@ -38,10 +38,6 @@ class RoomList extends Component{
     this.setState({newRoomName: e.target.value});
   }
 
-  // roomOnClick(x){
-  //   console.log('Room clicked', x)
-  // }
-
    render() {
      return (
        <section className="Room-list">

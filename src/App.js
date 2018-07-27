@@ -4,6 +4,7 @@ import './App.css';
 import * as firebase from 'firebase'
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
+import User from './components/User';
 
   var config = {
     apiKey: "AIzaSyAnoUBxAofWkV-Cy8JXgqtJaSFdexZM0Tg",
@@ -42,6 +43,10 @@ class App extends Component {
           </div>
           <h1 className="App-title">Bloc Chat</h1>
         </header>
+
+        <section className="Signin-container">
+          <User />
+        </section>
 
         <aside className="Side-bar">
           <RoomList firebase = {firebase} setActiveRoom={this.setActiveRoom} />
