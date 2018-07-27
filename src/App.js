@@ -22,8 +22,10 @@ class App extends Component {
     super(props);
     this.state={
     activeRoom: null,
+    user: null
     };
     this.setActiveRoom=this.setActiveRoom.bind(this);
+    this.setUser=this.setUser.bind(this);
   }
 
   setActiveRoom(room){
@@ -31,6 +33,9 @@ class App extends Component {
     console.log('Active room clicked', room.name);
   }
 
+  setUser(user){
+    this.setState({user: user});
+  }
 
   render() {
 
@@ -41,11 +46,11 @@ class App extends Component {
             <h1 className="centered">B</h1>
             <img src={logo} className="App-logo" alt="logo" />
           </div>
-          <h1 className="App-title">Bloc Chat</h1>
+          <h1 className="App-title">Bloc Chat </h1>
         </header>
 
         <section className="Signin-container">
-          <User />
+          <User firebase = {firebase} setUser={this.setUser}/>
         </section>
 
         <aside className="Side-bar">

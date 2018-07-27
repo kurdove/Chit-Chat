@@ -39,6 +39,12 @@
   margin-left: 2rem;
 }
 
+.Signin-container {
+  padding: 0.5rem 1rem 0.5rem 0;
+  background-color: #cccccc;
+  text-align: right;
+}
+
 .centered {
   position: absolute;
   top: 27%;
