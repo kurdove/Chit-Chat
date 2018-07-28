@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   render() {
+    let currentUser=this.state.user === null ? "Guest" : this.state.user.displayName;
 
     return (
       <div className="App">
@@ -50,16 +51,25 @@ class App extends Component {
         </header>
 
         <section className="Signin-container">
-          <User firebase = {firebase} setUser={this.setUser}/>
+          <User
+          firebase={firebase}
+          setUser={this.setUser}
+          currentUser={currentUser}/>
         </section>
 
         <aside className="Side-bar">
-          <RoomList firebase = {firebase} setActiveRoom={this.setActiveRoom} />
+          <RoomList
+          firebase={firebase}
+          setActiveRoom={this.setActiveRoom}/>
         </aside>
 
         <aside className="Message-container">
-          <MessageList firebase = {firebase} activeRoom={this.state.activeRoom} />
+          <MessageList
+          firebase={firebase}
+          activeRoom={this.state.activeRoom}
+          currentUser={currentUser}/>
         </aside>
+
       </div>
 
     );
