@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '.././styles/MessageList.css';
+import Moment from 'react-moment';
 
 class RoomList extends Component{
   constructor(props){
@@ -59,7 +60,14 @@ class RoomList extends Component{
      let currentMessages=(
        this.state.rooms.map( message => {
          if (message.roomId===activeRoom) {
-         return <ul key = {message.key}>{message.content} {message.sentAt}</ul>
+         return <section key = {message.key}>
+          <b>{message.username}</b>
+          <ul className="user-messages" key = {message.key}>{message.content}
+            <span className="message-time">
+              <Moment format="hh:mm A MM/DD/YY">{message.sentAt}</Moment>
+            </span>
+          </ul>
+         </section>
         }
         return null;
        })
@@ -74,8 +82,8 @@ class RoomList extends Component{
          <div>{currentMessages}</div>
 
          <form className="create-message" onSubmit={this.handleSubmit}>
-           <input type="text" placeholder="Type message right here" onChange={this.handleChange}/>
-           <input type="submit" value="CREATE"/>
+           <input className="input-field" type="text" placeholder="Type message right here" onChange={this.handleChange}/>
+           <input className="submit-button" type="submit" value="CREATE"/>
          </form>
 
        </section>
