@@ -21,7 +21,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-    activeRoom: null,
+    activeRoom: '',
     user: null
     };
     this.setActiveRoom=this.setActiveRoom.bind(this);
@@ -29,8 +29,8 @@ class App extends Component {
   }
 
   setActiveRoom(room){
-    this.setState({activeRoom: room.name});
-    console.log('Active room clicked', room.name);
+    this.setState({activeRoom: room});
+    console.log('Active room clicked', room.roomId);
   }
 
   setUser(user){
@@ -66,6 +66,7 @@ class App extends Component {
         <aside className="Message-container">
           <MessageList
           firebase={firebase}
+          setActiveRoom={this.setActiveRoom}
           activeRoom={this.state.activeRoom}
           currentUser={currentUser}/>
         </aside>
