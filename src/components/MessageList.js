@@ -13,7 +13,7 @@ class RoomList extends Component{
       roomId: ''
       // newMessage: '',
     };
-    this.roomsRef = this.props.firebase.database().ref('rooms');
+    this.roomsRef = this.props.firebase.database().ref('messages');
     this.createMessage = this.createMessage.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
